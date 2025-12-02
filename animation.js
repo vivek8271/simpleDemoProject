@@ -1,11 +1,11 @@
 ////////////////         toggle the image    ----------------------
 
 const images = [
-  "image/falled_truck_agrigate.jpg",
+  "falled_truck_agrigate.jpg",
   // "image/hand-sand.jpg",
-  "image/cement.jpg",
-  "image/son_river_sand.jpg",
-  "image/sand-stone.jpg",
+  "cement.jpg",
+  "son_river_sand.jpg",
+  "sand-stone.jpg",
 ];
 
 let current = 0;
@@ -33,4 +33,5 @@ setInterval(() => {
     }
   }
   typeWriter();
+
   
