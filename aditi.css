@@ -167,7 +167,7 @@ header nav a:hover {
 }
 
 #storage-area-image {
-  background-image: url("../image/truck agrigate.jpg");
+  background-image: url("truck agrigate.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -264,7 +264,7 @@ form button {
 }
 
 footer {
-  background-image: url('../image/bg_sky_darker.gif');
+  background-image: url('bg_sky_darker.gif');
   /* background: #0a0808; */
   color: rgb(99, 91, 91);
   text-align: center;
@@ -482,4 +482,5 @@ footer h3 {
   .product p {
     max-width: 100%;
   }
+
 }
