@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Material Price Calculator</title>
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .item {
+      margin: 10px 0;
+    }
+    label {
+      margin-right: 10px;
+    }
+    input[type="number"] {
+      width: 80px;
+      margin-left: 5px;
+    }
+    .total {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style> -->
+
+  <!-- <style>
+    #sand{
+      display: none;
+    }
+  </style> -->
+</head>
+<body>
+
+  <h2>Aditi Enterprises Price Calculator</h2>
+
+
+  <select id="materialSelect" onchange="getSelectedMaterial()">
+  <option value="">-- Select Material --</option>
+  <option value="sand">Sand</option>
+  <option value="steel">Steel</option>
+  <option value="ring">Ring</option>
+  <option value="aggregate">Aggregate</option>
+  <option value="sandstone">Sandstone</option>
+  <option value="cement">Cement</option>
+</select>
+
+
+  <select id="sand">
+    <option>2.3mm</option>
+    <option>3.0mm</option>
+    <option>2.0mm</option>
+    <option>1.0mm</option>
+  </select>
+  
+  <!-- <div class="item">
+    <input type="checkbox" id="sand" onchange="toggleInput('sand')">
+    <label for="sand">Sand (₹60 / cu.ft)</label>
+    Qty: <input type="number" id="qty-sand" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="item">
+    <input type="checkbox" id="cement" onchange="toggleInput('cement')">
+    <label for="cement">Cement (₹350 / bag)</label>
+    Qty: <input type="number" id="qty-cement" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="item">
+    <input type="checkbox" id="steel" onchange="toggleInput('steel')">
+    <label for="steel">Steel (₹60 / kg)</label>
+    Qty: <input type="number" id="qty-steel" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="item">
+    <input type="checkbox" id="aggregate" onchange="toggleInput('aggregate')">
+    <label for="aggregate">Aggregate (₹50 / cu.ft)</label>
+    Qty: <input type="number" id="qty-aggregate" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="item">
+    <input type="checkbox" id="sandstone" onchange="toggleInput('sandstone')">
+    <label for="sandstone">Sandstone (₹25 / piece)</label>
+    Qty: <input type="number" id="qty-sandstone" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="item">
+    <input type="checkbox" id="ring" onchange="toggleInput('ring')">
+    <label for="ring">Ring (₹100 / piece)</label>
+    Qty: <input type="number" id="qty-ring" disabled oninput="calculateTotal()">
+  </div>
+
+  <div class="total" id="totalPrice">Total: ₹0</div> -->
+
+  <script>
+    
+    let sand=document.getElementById("sand");
+    sand.hidden="true";
+    
+
+  function getSelectedMaterial(){
+  const select = document.getElementById("materialSelect");
+  const selectedValue = select.value;
+  const selectedText = select.options[select.selectedIndex].text;
+
+  console.log("Value:", selectedValue); // e.g., "sand"
+  console.log("Text:", selectedText);   // e.g., "Sand"
+  if(selectedText==="Sand"){
+  sand.hidden="false";
+ }
+
+   }
+//  if(selectedText=="Sand"){
+//   sand.hidden="false";
+//  }
+
+    const prices = {
+      sand: 60,
+      cement: 350,
+      steel: 60,
+      aggregate: 50,
+      sandstone: 25,
+      ring: 100
+    };
+
+    function toggleInput(item) {
+      const input = document.getElementById('qty-' + item);
+      input.disabled = !document.getElementById(item).checked;
+      if (input.disabled) input.value = '';
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      let total = 0;
+      for (let item in prices) {
+        const checkbox = document.getElementById(item);
+        const input = document.getElementById('qty-' + item);
+        if (checkbox.checked && input.value) {
+          total += parseFloat(input.value) * prices[item];
+        }
+      }
+      document.getElementById('totalPrice').textContent = 'Total: ₹' + total.toLocaleString();
+    }
+  </script>
+
+
+
+<section class="about">
+  <h2>About Us</h2>
+  <p id="typed-text"></p>
+</section>
+
+<script>
+const text = "Aditi Enterprises is a trusted name in the construction materials industry, dedicated to providing high-quality cement, sand, steel, and other essential building supplies. Based in Shivsagar Station Road, Bamhour, we have been proudly serving both individual builders and large construction firms with a commitment to excellence and timely delivery.";
+
+const container = document.getElementById("typed-text");
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    container.innerHTML = text.substring(0, i + 1) + '<span class="cursor"></span>';
+    
+    // Random typing speed between 30ms to 120ms
+    let delay = Math.floor(Math.random() * 90) + 30;
+
+    // Add extra pause for punctuation
+    if (text.charAt(i) === ',' || text.charAt(i) === '.') {
+      delay += 200; // pause 200ms on comma/period
+    }
+
+    i++;
+    setTimeout(typeWriter, delay);
+  } else {
+    container.innerHTML = text; // remove cursor when done
+  }
+}
+
+typeWriter();
+</script>
+
+<style>
+.about {
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#typed-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  white-space: normal; /* wrap text naturally */
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: #444;
+  animation: blink 0.7s steps(1) infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  50% { background: transparent; }
+}
+</style>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+@media screen and (max-width: 600px) {
+  #mobile-content {
+    display: block;
+    position: relative;
+  }
+
+  .mobile-menu div {
+    position: relative;
+    top: 60px;
+  }
+
+  .mobile-menu {
+    text-align: center;
+    /* width: 100px; */
+    row-gap: 20px;
+    position: fixed;
+    top: 0px;
+    left: -250px;
+    width: 100px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+    /* animation-name: lefttoright; */
+    /* animation-duration: .3s; */
+
+  }
+
+  .mobile-menu.show {
+    left: 0;
+  }
+
+  #menu {
+
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    z-index: 1001;
+
+
+  }
+
+
+  .mobile-menu a {
+
+    color: rgb(241, 238, 238);
+    /* background-color: wheat; */
+    text-decoration: none;
+
+  }
+
+
+  #nav-bar {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  #home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  #all-content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    row-gap: 20px;
+  }
+  #images{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #storage-area-image{
+    width: 100%;
+  }
+
+
+
+  #ad{
+    
+    width: 100%;
+  }
+}
