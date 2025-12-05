@@ -135,7 +135,7 @@ header nav a:hover {
 
 .logo {
 
-  width: 200px;
+  /* width: 200px; */
 
   height: auto;
   margin-bottom: 20px;
@@ -484,5 +484,6 @@ footer h3 {
   }
 
 }
+
 
 
