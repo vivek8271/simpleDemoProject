@@ -78,7 +78,7 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    await fetch("http://localhost:8080/submit-form", {
+    await fetch("https://aditienterprises.vercel.app/backent/server/.js//submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -112,5 +112,6 @@ const mobileMenu = document.getElementById("mobileMenu");
 menuButton.addEventListener("click", () => {
   mobileMenu.classList.toggle("show");
 });
+
 
 
