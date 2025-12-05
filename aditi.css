@@ -139,7 +139,7 @@ header nav a:hover {
 
   height: auto;
   margin-bottom: 20px;
-  /* clip-path: circle(50%); */
+  clip-path: circle(50%);
 }
 
 .hero {
@@ -484,4 +484,5 @@ footer h3 {
   }
 
 }
+
 
