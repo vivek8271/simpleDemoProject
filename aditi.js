@@ -106,10 +106,11 @@ document.getElementById("pro").addEventListener("click", async () => {
 
 
 
-// const menuButton = document.getElementById("menu");
-// const mobileMenu = document.getElementById("mobileMenu");
+const menuButton = document.getElementById("menu");
+const mobileMenu = document.getElementById("mobileMenu");
 
-// menuButton.addEventListener("click", () => {
-//   mobileMenu.classList.toggle("show");
-// });
+menuButton.addEventListener("click", () => {
+  mobileMenu.classList.toggle("show");
+});
+
 
