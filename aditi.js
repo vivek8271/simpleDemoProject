@@ -78,7 +78,7 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    await fetch("https://aditienterprises.vercel.app/backent/server/.js//submit-form", {
+    await fetch("https://backent-seven.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ form.addEventListener("submit", async (event) => {
 
 
 document.getElementById("pro").addEventListener("click", async () => {
-  const response = await fetch("http://localhost:8080/products", { method: "POST" });
+  const response = await fetch("https://backent-seven.vercel.app/products", { method: "POST" });
   const text = await response.text();
   console.log(text);
 });
@@ -112,6 +112,7 @@ const mobileMenu = document.getElementById("mobileMenu");
 menuButton.addEventListener("click", () => {
   mobileMenu.classList.toggle("show");
 });
+
 
 
 
