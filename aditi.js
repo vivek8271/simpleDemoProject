@@ -78,7 +78,7 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    await fetch("https://backent-seven.vercel.app/", {
+    await fetch("https://backent-seven.vercel.app/submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
